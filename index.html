@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars RPG Game</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--   bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--   jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- script.js -->
+    <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 class="title">Star Wars RPG</h1>
+        <h2 class="title">Choose Your Own Fate</h2>
+        <br>
+        <!--     Figher and enemy selection -->
+        <h3 id="pickHero">(Example)Select Your Fighter:</h3>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <div id="luke" class="card">
+                    <div class="cardWrap">
+                        <h4><strong>Luke Skywalker<strong></h4>
+                    </div>
+                    <img src="https://media.contentapi.ea.com/content/dam/ea/walrus/characters/luke/game-object/hub-luke-skywalker-xlg.jpg" alt="Luke Skywalker">
+                    <div class="cardWrap">
+                        <div id="lukeAtk" class="glyphicon glyphicon-flash"></div>
+                        <div id="lukeHealth" class="glyphicon glyphicon-heart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="vader" class="card">
+                    <div class="cardWrap">
+                        <h4><strong>Dark Vader<strong></h4>
+                    </div>
+                    <img src="https://media.contentapi.ea.com/content/dam/ea/walrus/characters/darth-vader/game-object/hub-darth-vader-xlg.jpg" alt="Darth Vader">
+                    <div class="cardWrap">
+                        <div id="vaderAtk" class="glyphicon glyphicon-flash"></div>
+                        <div id="vaderHealth" class="glyphicon glyphicon-heart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="han" class="card">
+                    <div class="cardWrap">
+                        <h4><strong>Han Solo<strong></h4>
+                    </div>
+                    <img src="https://media.contentapi.ea.com/content/dam/ea/walrus/characters/han-solo/game-object/hub-han-solo-xlg.jpg" alt="Han Solo">
+                    <div class="cardWrap">
+                        <div id="hanAtk" class="glyphicon glyphicon-flash"></div>
+                        <div id="hanHealth" class="glyphicon glyphicon-heart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="boba" class="card">
+                    <div class="cardWrap">
+                        <h4><strong>Boba Fett<strong></h4>
+                    </div>
+                    <img src="https://media.contentapi.ea.com/content/dam/ea/walrus/characters/boba-fett/game-object/hub-boba-fett-xlg.jpg" alt="Boba Fett">
+                    <div class="cardWrap">
+                        <div id="bobaAtk" class="glyphicon glyphicon-flash">bobaFett.attack</div>
+                        <div id="bobaHealth" class="glyphicon glyphicon-heart">bobaFett.health</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--     Staging Area to fight -->
+        <div class="row">
+            <div class="col-md-4">
+                <h3 id="activeHero">Your Active Fighter:</h3>
+            </div>
+            <div class="col-md-4">
+                <h3 class="fightDivide">VS</h3>
+                <button class="btn btn-danger btn-block" id="atkBtn">Attack</button>
+            </div>
+            <div class="col-md-4">
+                <h3 id="activeOp">Your Active Opponent:</h3>
+            </div>
+        </div>
+        <br>
+        <!--     Attack log and benched opponents -->
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Attack Log</h3>
+            </div>
+            <!--       <div class="col-md-4"></div> -->
+            <div class="col-md-6">
+                <h3>Benched Opponents</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="benchOp1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="benchOp2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>
