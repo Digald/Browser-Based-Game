@@ -1,15 +1,15 @@
 $(document).ready(function() {
-    // objects containing stats for each characters
-    var lukeSkywalker = { health: 150, attack: 25, counterAttack: 25, active: false, activeOp: false };
-    var darthVader = { health: 100, attack: 25, counterAttack: 25, active: false, activeOp: false };
-    var hanSolo = { health: 100, attack: 25, counterAttack: 25, active: false, acticeOp: false };
-    var bobaFett = { health: 100, attack: 25, counterAttack: 25, active: false, activeOp: false };
+    // objects containing stats for each hero
+    var lukeSkywalker = { health: 300, attack: 25, counterAttack: 25, active: false, activeOp: false, defeated: false };
+    var darthVader = { health: 100, attack: 25, counterAttack: 25, active: false, activeOp: false, defeated: false };
+    var hanSolo = { health: 100, attack: 25, counterAttack: 25, active: false, activeOp: false, defeated: false };
+    var bobaFett = { health: 100, attack: 25, counterAttack: 25, active: false, activeOp: false, defeated: false };
 
-    // set variables to be compared
+    // variables to hold active hero stats
     var activeFighter;
     var activeOpp;
 
-    // set initial values and appropriate starting text
+    // set initial values to html and appropriate starting text
     $("#pickHero").text("Please select a hero to fight on your side:")
     $("#lukeAtk").html(lukeSkywalker.attack);
     $("#lukeHealth").html(lukeSkywalker.health);
@@ -20,68 +20,95 @@ $(document).ready(function() {
     $("#bobaAtk").html(bobaFett.attack);
     $("#bobaHealth").html(bobaFett.health);
 
-    // conditions for chosing your starter hero
-    $("#luke").click(function() {
-        lukeSkywalker.active = true;
-        toFight();
-    });
-    $("#vader").click(function() {
-        darthVader.active = true;
-        toFight();
-    });
-    $("#han").click(function() {
-        hanSolo.active = true;
-        toFight();
-    });
-    $("#boba").click(function() {
-        bobaFett.active = true;
-        toFight();
+    // Options for chosing your starting hero
+    $("#luke, #vader, #han, #boba").click(function() {
+        if ($("#luke").data("clicked", true)) {
+            lukeSkywalker.active = true;
+            toFight();
+        } else if ($("#vader").data("clicked", true)) {
+            darthVader.active = true;
+            toFight;
+        }
     });
 
 
-    // Button press for every possible match up
+
+    //   $("#luke").click(function() {
+    //     lukeSkywalker.active = true; 
+    //     toFight();
+    //    });
+    //   $("#vader").click(function() {
+    //     darthVader.active = true; 
+    //     toFight();
+    //     console.log(darthVader);
+    //    });
+    //   $("#han").click(function() {
+    //     hanSolo.active = true;
+    //     toFight();
+    //    });
+    //   $("#boba").click(function() {
+    //     bobaFett.active = true;
+    //     toFight();
+    //    });
+
+
+    // Button press calculates every hero matchup
     $("#atkBtn").click(function() {
+        // assign stats to generic variable to save a bit of space
         if (lukeSkywalker.active === true && darthVader.activeOp === true) {
-            lukeSkywalker.health -= darthVader.counterAttack;
-            darthVader.health -= lukeSkywalker.attack;
-            lukeSkywalker.attack += 6;
-            $("#lukeAtk").html(lukeSkywalker.attack);
-            $("#lukeHealth").html(lukeSkywalker.health);
-            $("#vaderAtk").html(darthVader.attack);
-            $("#vaderHealth").html(darthVader.health);
             activeFighter = lukeSkywalker;
             activeOpp = darthVader;
-            winLose();
         } else if (lukeSkywalker.active === true && hanSolo.activeOp === true) {
-            // do
+            activeFighter = lukeSkywalker;
+            activeOpp = hanSolo;
         } else if (lukeSkywalker.active === true && bobaFett.activeOp) {
-            // do
+            activeFighter = lukeSkywalker;
+            activeOpp = bobaFett;
         }
         if (darthVader.active === true && lukeSkywalker.activeOp === true) {
-            // do
-        } else if (darthVader.active == true && hanSolo.activeOp === true) {
-            // do
+            activeFighter = darthVader;
+            activeOpp = lukeSkywalker;
+        } else if (darthVader.active === true && hanSolo.activeOp === true) {
+            activeFighter = darthVader;
+            activeOpp = hanSolo;
         } else if (darthVader.active === true && bobaFett.activeOp === true) {
-            // do
+            activeFighter = darthVader;
+            activeOpp = bobaFett;
         }
         if (hanSolo.active === true && lukeSkywalker.activeOp === true) {
-            // do
+            activeFighter = hanSolo;
+            activeOpp = lukeSkywalker;
         } else if (hanSolo.active === true && darthVader.activeOp === true) {
-            // do 
-        } else if (hanSolo.active === true && darthVader.activeOp === true) {
-            // do
+            activeFighter = hanSolo;
+            activeOpp = darthVader;
+        } else if (hanSolo.active === true && bobaFett.activeOp === true) {
+            activeFighter = hanSolo;
+            activeOpp = bobaFett;
         }
         if (bobaFett.active === true && lukeSkywalker.activeOp === true) {
-            // do
+            activeFighter = bobaFett;
+            activeOpp = lukeSkywalker;
         } else if (bobaFett.active === true && darthVader.activeOp === true) {
-            // do
+            activeFighter = bobaFett;
+            activeOpp = darthVader;
         } else if (bobaFett.active === true && hanSolo.activeOp === true) {
-            // do
+            activeFighter = bobaFett;
+            activeOpp = hanSolo;
         }
+        // calculate stats and refresh
+        activeOpp.health -= activeFighter.attack;
+        activeFighter.health -= activeOpp.counterAttack;
+        activeFighter.attack += 6;
+        $("#activeHero .attack").html(activeFighter.attack);
+        $("#activeHero .health").html(activeFighter.health);
+        $("#activeOp .attack").html(activeOpp.attack);
+        $("#activeOp .health").html(activeOpp.health);
+        defeatFighter();
+        winLose();
     });
 
 
-    // function to setup staging area based on picks
+    // set up fighting area depending on what hero has been picked
     function toFight() {
         if (lukeSkywalker.active === true) {
             $("#luke").detach().appendTo("#activeHero").css({ "border": "5px solid green" });
@@ -99,6 +126,7 @@ $(document).ready(function() {
                 $("#boba").detach().appendTo("#benchOp2");
                 $("#boba").off("click");
                 $("#pickHero").empty();
+                console.log(darthVader);
             });
             $("#han").click(function() {
                 hanSolo.activeOp = true;
@@ -120,24 +148,94 @@ $(document).ready(function() {
                 $("#han").off("click");
                 $("#pickHero").empty();
             });
-
-
         } // end of luke hero path
+        else if (darthVader.active === true) {
+            // do
+        } else if (hanSolo.active === true) {
+            // do
+        } else if (bobaFett.active === true) {
+            // do
+        }
 
     } // end of toFight();
 
 
-    function winLose() {
-        console.log("function happened");
-        if (lukeSkywalker.health <= 0) {
-            console.log("Did you do first if?");
-        } else if (darthVader.health <= 0) {
-            console.log("did you do second if?");
-            darthVader.activeOp = false;
-            $("#vader").remove();
-            console.log("Should have been removed");
+    function defeatFighter() {
+        if (activeFighter.health <= 0) {
+            console.log("You Lose");
+            $("#atkBtn").off("click");
+        } else if (activeOpp.health <= 0) {
+            if (lukeSkywalker.activeOp === true) {
+                lukeSkywalker.activeOp = false;
+                lukeSkywalker.defeated = true;
+            } else if (darthVader.activeOp === true) {
+                darthVader.activeOp = false;
+                darthVader.defeated = true;
+            } else if (hanSolo.activeOp === true) {
+                hanSolo.activeOp = false;
+                hanSolo.defeated = true;
+            } else if (bobaFett.activeOp === true) {
+                bobaFett.activeOp = false;
+                bobaFett.defeated = true;
+            }
+            activeOpp = undefined;
+            $("#activeOp .card").remove();
+            //test
+            $("#luke").click(function() {
+                if (lukeSkywalker.active !== true) {
+                    lukeSkywalker.activeOp = true;
+                    lukeSkywalker.detach().appendTo("#activeOp");
+                    $("#vader, #han, #boba").off("click");
+                }
+            });
+            $("#vader").click(function() {
+                if (darthVader.active !== true) {
+                    darthVader.activeOp = true;
+                    $("#vader").detach().appendTo("#activeOp");
+                    $("#luke, #han, #boba").off("click");
+                }
+            });
+            $("#han").click(function() {
+                if (hanSolo.active !== true) {
+                    hanSolo.activeOp = true;
+                    $("#han").detach().appendTo("#activeOp");
+                    $("#luke, #vader, #boba").off("click");
+                }
+            });
+            $("#boba").click(function() {
+                if (bobaFett.active !== true) {
+                    bobaFett.activeOp = true;
+                    $("#boba").detach().appendTo("#activeOp");
+                    $("#luke, #vader, #han").off("click");
+                }
+            });
+            //test
+
         }
-        console.log("function ended")
+    } // end defeatFighter();
+
+    function winLose() {
+        if (lukeSkywalker.active === true) {
+            if (darthVader.defeated === true && hanSolo.defeated === true && bobaFett.defeated === true) {
+                $("#atkBtn").off("click");
+                console.log("You win");
+            }
+        } else if (darthVader.active === true) {
+            if (lukeSkywalker.defeated === true && hanSolo.defeated === true && bobaFett.defeated === true) {
+                $("#atkBtn").off("click");
+                console.log("You win");
+            }
+        } else if (hanSolo.active === true) {
+            if (lukeSkywalker.defeated === true && darthVader.defeated === true && bobaFett.defeated === true) {
+                $("#atkBtn").off("click");
+                console.log("You win");
+            }
+        } else if (bobaFett.active === true) {
+            if (lukeSkywalker.defeated === true && darthVader.defeated === true && hanSolo.defeated === true) {
+                $("#atkBtn").off("click");
+                console.log("You win");
+            }
+        }
     } // end winLose();
 
     // PSUDOCODE:
