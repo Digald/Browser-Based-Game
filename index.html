@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!--   bootstrap js -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--   jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!--   bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- script.js -->
     <script src="assets/js/script.js"></script>
 </head>
@@ -20,12 +20,14 @@
     <div class="container-fluid">
         <h1 class="title">Star Wars RPG</h1>
         <h2 class="title">Choose Your Own Fate</h2>
-        <br>
+        <p id="reset">
+            <button type="button" class="btn btn-default">Restart Game</button>
+        </p>
         <!--     Figher and enemy selection -->
-        <h3 id="pickHero">(Example)Select Your Fighter:</h3>
+        <h3 id="pickHero"></h3>
         <br>
         <div class="row">
-            <div class="col-md-3">
+            <div id="placeLuke" class="col-md-3">
                 <div id="luke" class="card">
                     <div class="cardWrap">
                         <h4><strong>Luke Skywalker<strong></h4>
@@ -37,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div id="placeVader" class="col-md-3">
                 <div id="vader" class="card">
                     <div class="cardWrap">
                         <h4><strong>Dark Vader<strong></h4>
@@ -49,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div id="placeHan" class="col-md-3">
                 <div id="han" class="card">
                     <div class="cardWrap">
                         <h4><strong>Han Solo<strong></h4>
@@ -61,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div id="placeBoba" class="col-md-3">
                 <div id="boba" class="card">
                     <div class="cardWrap">
                         <h4><strong>Boba Fett<strong></h4>
@@ -78,6 +80,7 @@
         <!--     Staging Area to fight -->
         <div class="row">
             <div class="col-md-4">
+                <h1 id="displayLose"></h1>
                 <h3 id="activeHero">Your Active Fighter:</h3>
             </div>
             <div class="col-md-4">
@@ -86,17 +89,20 @@
             </div>
             <div class="col-md-4">
                 <h3 id="activeOp">Your Active Opponent:</h3>
+                <h2 id="newOp"></h2>
+                <h1 id="displayWin"></h1>
             </div>
         </div>
         <br>
         <!--     Attack log and benched opponents -->
         <div class="row">
             <div class="col-md-6">
-                <h3>Attack Log</h3>
+                <h3>Attack Log:</h3>
+                <h4 id="attackLog"></h4>
             </div>
             <!--       <div class="col-md-4"></div> -->
             <div class="col-md-6">
-                <h3>Benched Opponents</h3>
+                <h3>Benched Opponents:</h3>
                 <div class="row">
                     <div class="col-md-6">
                         <div id="benchOp1">
