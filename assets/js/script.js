@@ -10,14 +10,39 @@ $(document).ready(function() {
     var lukeCard = $("#luke");
     var vaderCard = $("#vader");
     var hanCard = $("#han");
-    var bobaCard = $("#boba")
+    var bobaCard = $("#boba");
 
     // variables to hold active hero stats
     var activeFighter;
     var activeOpp;
 
+    // working on reset
+    $("#reset").click(function() {
+        location.reload();
 
+        // ATTEMPT AT RESETTING THE GAME BUT CLICK EFFECTS AND STATS WOULD NOT FUNCTION AFTER RESETTING
+        // $("#placeLuke").append(lukeCard);
+        // $("#placeVader").append(vaderCard);
+        // $("#placeHan").append(hanCard);
+        // $("#placeBoba").append(bobaCard);
+        // $("#luke, #vader, #han, #boba").css({ "border": "none" });
+        // $("#attackLog").empty();
+        // $("#newOp").empty();
+        // $("#displayLose").empty();
+        // $("#lukeAtk").html(lukeSkywalker.attack);
+        // $("#lukeHealth").html(lukeSkywalker.health);
+        // $("#vaderAtk").html(darthVader.attack);
+        // $("#vaderHealth").html(darthVader.health);
+        // $("#hanAtk").html(hanSolo.attack);
+        // $("#hanHealth").html(hanSolo.health);
+        // $("#bobaAtk").html(bobaFett.attack);
+        // $("#bobaHealth").html(bobaFett.health);
+        // activeFighter = undefined;
+        // activeOpp =  undefined;
+        // startGame();
+    });
 
+    // Main game flow function
     function startGame() {
 
         // set initial values to html and appropriate starting text
@@ -116,21 +141,9 @@ $(document).ready(function() {
         }); // end of button click function
     } // end startGame function
     startGame();
-    // working on reset
-    $("#reset").click(function() {
-        $("#placeLuke").append(lukeCard);
-        $("#placeVader").append(vaderCard);
-        $("#placeHan").append(hanCard);
-        $("#placeBoba").append(bobaCard);
-        $("#luke, #vader, #han, #boba").css({ "border": "none" });
-        $("#attackLog").empty();
-        $("#newOp").empty();
-        $("#displayLose").empty();
-        startGame();
-    });
 
     // ============================================================
-    // DEFINED FUNCTIONS BEYOND THIS POINT
+    // ONLY NESTED FUNCTIONS BEYOND THIS POINT
     // ============================================================
 
     // set up fighting area depending on what hero has been picked
