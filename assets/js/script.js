@@ -283,7 +283,7 @@ $(document).ready(function() {
             // if you get beaten
             $("#atkBtn").off("click");
             $("#activeHero").remove();
-            $("#displayLose").html("YOU LOST THE FIGHT");
+            $("#displayLose").html("YOU LOST THE FIGHT").addClass("redColor");
             console.log("You Lose");
             $("#atkBtn").off("click");
         } else if (activeOpp.health <= 0) {
@@ -347,28 +347,28 @@ $(document).ready(function() {
             if (darthVader.defeated === true && hanSolo.defeated === true && bobaFett.defeated === true) {
                 $("#atkBtn").off("click");
                 $("#newOp").hide();
-                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>");
+                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>").addClass("greenColor");
                 console.log("You win");
             }
         } else if (darthVader.active === true) {
             if (lukeSkywalker.defeated === true && hanSolo.defeated === true && bobaFett.defeated === true) {
                 $("#atkBtn").off("click");
                 $("#newOp").hide();
-                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>");
+                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>").addClass("greenColor");
                 console.log("You win");
             }
         } else if (hanSolo.active === true) {
             if (lukeSkywalker.defeated === true && darthVader.defeated === true && bobaFett.defeated === true) {
                 $("#atkBtn").off("click");
                 $("#newOp").hide();
-                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>");
+                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>").addClass("greenColor");
                 console.log("You win");
             }
         } else if (bobaFett.active === true) {
             if (lukeSkywalker.defeated === true && darthVader.defeated === true && hanSolo.defeated === true) {
                 $("#atkBtn").off("click");
                 $("#newOp").hide();
-                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>");
+                $("#activeOp").html("<h1>YOU WON THE FIGHT</h1>").addClass("greenColor");
                 console.log("You win");
             }
         }
