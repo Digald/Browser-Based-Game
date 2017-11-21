@@ -129,7 +129,7 @@ $(document).ready(function() {
             activeOpp.health -= activeFighter.attack;
             activeFighter.health -= activeOpp.counterAttack;
             // announce attacks to the attack log
-            $("#attackLog").html("You attacked " + activeOpp.name + " for " + activeFighter.attack + " damage! Meanwhile, " + activeOpp.name + " attacked you for " + activeOpp.attack + " damage.");
+            $("#attackLog").html("You attacked " + activeOpp.name + " for " + activeFighter.attack + " damage! Then, " + activeOpp.name + " attacks you for " + activeOpp.attack + " damage.");
             activeFighter.attack += 8;
             $("#activeHero .attack").html(activeFighter.attack);
             $("#activeHero .health").html(activeFighter.health);
