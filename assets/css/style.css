@@ -4,6 +4,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: auto;
+    font-family: Starjedi;
+}
+@font-face {
+  font-family: "Starjedi";
+  src: url("../starjedi/Starjedi.ttf");
 }
 
 .container-fluid {

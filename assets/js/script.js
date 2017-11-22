@@ -21,6 +21,7 @@ $(document).ready(function() {
         location.reload();
 
         // ATTEMPT AT RESETTING THE GAME BUT CLICK EFFECTS AND STATS WOULD NOT FUNCTION AFTER RESETTING
+        // USED PAGE RELOAD AS A PLCEHOLDER INSTEAD
         // $("#placeLuke").append(lukeCard);
         // $("#placeVader").append(vaderCard);
         // $("#placeHan").append(hanCard);
