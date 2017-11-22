@@ -7,15 +7,12 @@ body {
     font-family: Starjedi;
 }
 @font-face {
-  font-family: "Starjedi";
-  src: url("../starjedi/Starjedi.ttf");
+    font-family: "Starjedi";
+    src: url("../starjedi/Starjedi.ttf");
 }
-
 .container-fluid {
     color: #eee;
 }
-
-
 /* HEADERS */
 
 .title {
@@ -25,10 +22,7 @@ body {
 #reset {
     text-align: center;
 }
-
-
 /* CARDS */
-
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
@@ -57,7 +51,6 @@ img {
     width: 100%;
 }
 
-
 /* VERSUS STAGING AREA */
 
 .fightDivide {
@@ -70,71 +63,75 @@ img {
 }
 
 /*TEXT COLORS*/
+
 .blueColor {
-  text-shadow: 
-    2px 2px 1px rgba(0,0,0,.4),
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, .4),
     0 0 20px #519cff,
     0 0 40px rgba(0, 110, 255, .75),
     0 0 50px rgba(0, 110, 255, .75),
     0 0 100px rgba(0, 110, 255, .75);
 }
-.blueColor:before{
-  content:'';
-  background: rgba(81, 156, 255, .25);
-  z-index: -1;
-  opacity: .7;
-  filter: blur(50px);
-  width: 100%;
-  height: 100%;
+
+.blueColor:before {
+    content: '';
+    background: rgba(81, 156, 255, .25);
+    z-index: -1;
+    opacity: .7;
+    filter: blur(50px);
+    width: 100%;
+    height: 100%;
 }
+
 .purpleColor {
-  text-shadow: 
-    2px 2px 1px rgba(0,0,0,.4),
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, .4),
     0 0 20px #bb56ff,
     0 0 40px rgba(152, 0, 255, .75),
     0 0 50px rgba(152, 0, 255, .75),
     0 0 100px rgba(152, 0, 255, .75);
 }
-.purpleColor:before{
-  content:'';
-  background: rgba(187, 86, 255, .25);
-  z-index: -1;
-  opacity: .7;
-  filter: blur(50px);
-  width: 100%;
-  height: 100%;
+
+.purpleColor:before {
+    content: '';
+    background: rgba(187, 86, 255, .25);
+    z-index: -1;
+    opacity: .7;
+    filter: blur(50px);
+    width: 100%;
+    height: 100%;
 }
+
 .redColor {
-  text-shadow: 
-    2px 2px 1px rgba(0,0,0,.4),
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, .4),
     0 0 20px #ff4f4f,
     0 0 40px rgba(255, 0, 0, .75),
     0 0 50px rgba(255, 0, 0, .75),
     0 0 100px rgba(255, 0, 0, .75);
 }
-.redColor:before{
-  content:'';
-  background: rgba(255, 79, 79, .25);
-  z-index: -1;
-  opacity: .7;
-  filter: blur(50px);
-  width: 100%;
-  height: 100%;
+
+.redColor:before {
+    content: '';
+    background: rgba(255, 79, 79, .25);
+    z-index: -1;
+    opacity: .7;
+    filter: blur(50px);
+    width: 100%;
+    height: 100%;
 }
+
 .greenColor {
-  text-shadow: 
-    2px 2px 1px rgba(0,0,0,.4),
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, .4),
     0 0 20px #42ff52,
     0 0 40px rgba(0, 255, 21, .75),
     0 0 50px rgba(0, 255, 21, .75),
     0 0 100px rgba(0, 255, 21, .75);
 }
-.greenColor:before{
-  content:'';
-  background: rgba(66, 255, 82, .25);
-  z-index: -1;
-  opacity: .7;
-  filter: blur(50px);
-  width: 100%;
-  height: 100%;
+
+.greenColor:before {
+    content: '';
+    background: rgba(66, 255, 82, .25);
+    z-index: -1;
+    opacity: .7;
+    filter: blur(50px);
+    width: 100%;
+    height: 100%;
 }
