@@ -4,12 +4,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: auto;
-    font-family: Starjedi;
+    /*font-family: Starjedi;*/
 }
-@font-face {
+
+/* REMOVED THE FONT BECAUSE IT IS NOT REPLACING SOME LETTERS PROPERLY */
+/*@font-face {
     font-family: "Starjedi";
     src: url("../starjedi/Starjedi.ttf");
-}
+}*/
+
 .container-fluid {
     color: #eee;
 }
